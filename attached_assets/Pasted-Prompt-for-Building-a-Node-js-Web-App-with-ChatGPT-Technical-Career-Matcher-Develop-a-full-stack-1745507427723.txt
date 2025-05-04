@@ -1,0 +1,58 @@
+Prompt for Building a Node.js Web App with ChatGPT: “Technical Career Matcher”
+
+Develop a full-stack web application using Node.js (Express) that takes as input a set of questions and answers provided by a student about their interests and preferences. The backend will process these inputs and call ChatGPT (OpenAI API) to generate a suggestion for the most appropriate technical career path, including a detailed explanation for the recommendation.
+🔧 Backend Functionality (Node.js)
+
+    Build a secure RESTful API that accepts a payload containing structured responses to a variety of question types:
+
+        Single choice (e.g., radio buttons)
+
+        Multiple choice (e.g., checkboxes)
+
+        Open-ended responses (e.g., free text inputs)
+
+    Payload formatting: transform user responses into a well-structured prompt suitable for AI processing.
+
+    OpenAI API integration (chat/completions endpoint) to fetch:
+
+        The suggested technical role (e.g., "Data Analyst", "Frontend Developer", "Machine Learning Engineer")
+
+        A detailed rationale tailored to the student’s answers.
+
+    Input validation and sanitization (to prevent XSS, SQL/NoSQL injection, etc.)
+
+    Error handling for malformed requests, OpenAI API failures, or timeouts.
+
+    Security best practices:
+
+        Rate limiting
+
+        Input validation via schema (Joi or Zod)
+
+        HTTP header protection (helmet)
+
+        CORS configuration
+
+        Optional: JWT-based auth or API key protection
+
+💻 Frontend Overview (briefly)
+
+    A dynamic form with various question types as described.
+
+    Real-time input validation.
+
+    Clean display of the AI-generated result: Career Title + Detailed Description.
+
+🧠 AI Prompt Example (dynamically generated)
+
+    "A student has answered the following questions about their interests:
+
+        'Do you enjoy working in teams?' → 'Yes'
+
+        'Do you prefer working with hardware or software?' → 'Software'
+
+        'Which languages have you tried?' → 'Python, JavaScript'
+
+        'Describe a project you enjoyed building.' → 'A budgeting app for roommates'
+
+    Based on these answers, what is the most suitable technical career for this student? Please provide a thoughtful and detailed explanation."
